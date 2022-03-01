@@ -10,5 +10,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Added `CHANGELOG.md`, `CONTRIBUTING.md`, `LICENSE.md` and `README.md` files.
+- Added github reusable workflow for terraform provisioning.
 
 [unreleased]: https://github.com/filipefigueredo/pipeline-templatess

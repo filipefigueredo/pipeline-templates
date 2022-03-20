@@ -9,8 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Added `CHANGELOG.md`, `CONTRIBUTING.md`, `LICENSE.md` and `README.md` files.
+- Added `CHANGELOG.md`, `CODE_OF_CONDUCT.md`, `CONTRIBUTING.md`, `LICENSE.md` and `README.md` files.
 - Added github reusable workflow for terraform cloud provisioning.
-- Added github reusable workflow for terraform cloud deprovisioning.
+- Added github reusable workflow for terraform cloud teardown.
+- Added github reusable workflow for terraform cloud code validation.
+- Added github reusable workflow for tfsec code scanning.
+- Added github reusable workflow for triggering azure devops pipelines.
 
-[unreleased]: https://github.com/filipefigueredo/pipeline-templatess
+[unreleased]: https://github.com/filipefigueredo/pipeline-templates

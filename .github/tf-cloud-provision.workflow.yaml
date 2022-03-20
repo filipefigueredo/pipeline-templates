@@ -1,5 +1,4 @@
-name: Terraform cloud provisioning
-
+name: tf cloud provisioning
 on:
   workflow_call:
     inputs:
@@ -10,12 +9,13 @@ on:
 
     secrets:
       terraform_cloud_api_token:
-        description: Terraform Cloud API token
+        description: "Terraform Cloud API token"
         required: true
 
 jobs:
-  terraform-apply:
-    name: Apply terraform configurations
+  # Creates or updates infrastructure according to Terraform configuration files in the current directory.
+  tf-apply:
+    name: Terraform apply
 
     runs-on: ubuntu-20.04
 
@@ -34,12 +34,14 @@ jobs:
         uses: hashicorp/setup-terraform@v1
         with:
           cli_config_credentials_token: ${{ secrets.terraform_cloud_api_token }}
-          terraform_wrapper: false
+          terraform_wrapper: true
 
       # Initializes terraform configurations.
       - name: Terraform Init
+        id: init
         run: terraform init
 
       # Applies terraform configuration.
       - name: Terraform Apply
+        id: apply
         run: terraform apply -auto-approve

@@ -1,4 +1,4 @@
-name: Terraform cloud deprovision
+name: tf cloud teardown
 
 on:
   workflow_call:
@@ -10,12 +10,13 @@ on:
 
     secrets:
       terraform_cloud_api_token:
-        description: Terraform Cloud API token
+        description: "Terraform Cloud API token"
         required: true
 
 jobs:
-  terraform-destroy:
-    name: Destroy terraform configurations
+  # Destroy Terraform-managed infrastructure.  
+  tf-destroy:
+    name: Terraform destroy
 
     runs-on: ubuntu-20.04
 
@@ -41,4 +42,4 @@ jobs:
 
       # Destroys terraform configuration
       - name: Terraform Destroy
-        run: terraform apply -destroy -auto-approve
+        run: terraform destroy -auto-approve

@@ -14,7 +14,7 @@ on:
         required: true
 
 jobs:
-  # Destroy Terraform-managed infrastructure.  
+  # Destroy Terraform-managed infrastructure.
   tf-destroy:
     name: Terraform destroy
 
